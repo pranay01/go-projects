@@ -1,7 +1,9 @@
 package main
 
 import "fmt"
+import "github.com/pranay01/go-projects/stringutil"
+
 
 func main() {
-	fmt.Println("Hello, 世界")
+	fmt.Println(stringutil.Reverse("Hello, 世界"))
 }
