@@ -8,8 +8,14 @@ type MyReader struct{}
 
 // TODO: Add a Read([]byte) (int, error) method to MyReader.
 
-func (r MyReader)Read([]byte) (int, error) {
-	return 'A'
+func (r MyReader)Read(b []byte) (int, error) {
+	
+	// Just fill whatever byte you get with 'A's
+	length := len(b)
+	for i:=0;i<length;i++ {
+		b[i] = 'A'
+	}
+	return length, nil
 }
 
 func main() {

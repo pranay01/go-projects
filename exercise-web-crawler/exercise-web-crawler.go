@@ -27,6 +27,7 @@ func Crawl(url string, depth int, fetcher Fetcher, c *Cache) {
 		body, urls, err := fetcher.Fetch(url)
 		c.v[url] = true	
 		// Seems to work even without needing mutexes
+		// Might need mutexes when more parallel threads are involved
 		if err != nil {
 			fmt.Println(err)
 			return
